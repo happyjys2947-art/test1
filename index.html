@@ -7,163 +7,113 @@
 <meta name="description" content="34년 연구·경영 현장 경험을 바탕으로 공공기관과 기업에 생성형 AI 활용 교육을 하는 성찬용 강사의 포트폴리오">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <style>
   :root {
-    --space: #0c1030;
-    --space-deep: #060820;
-    --starlight: #fff8e7;
-    --text: #e6e3f2;
-    --muted: #a3a8cc;
-    --gold: #f4e9a6;
-    --line: rgba(244, 233, 166, 0.22);
+    --sky: #c6e0f9;
+    --sky-low: #e6f2fd;
+    --cloud: #ffffff;
+    --ink: #1e2a52;
+    --muted: #4f5d86;
+    --sun: #ffc93c;
+    --line: #a9c9ec;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    background: radial-gradient(ellipse at 50% 0%, var(--space) 0%, var(--space-deep) 70%);
-    background-attachment: fixed;
-    color: var(--text);
-    font-family: "Gowun Batang", "Noto Serif KR", "AppleMyungjo", serif;
+    background: linear-gradient(180deg, var(--sky) 0%, var(--sky) 70vh, var(--sky-low) 130vh, #ffffff 100%);
+    color: var(--ink);
+    font-family: "Gowun Dodum", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
     font-size: 1.0625rem;
     line-height: 1.85;
-    min-height: 100vh;
   }
-  #sky {
-    position: fixed; inset: 0;
-    width: 100%; height: 100%;
-    z-index: 0; pointer-events: none;
-  }
-  main { position: relative; z-index: 1; }
-  a { color: var(--gold); }
-  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 2px; }
-
-  /* ---------- 첫 화면 ---------- */
+  a { color: var(--ink); }
+  a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
+    align-items: center; justify-content: center;
     text-align: center;
-    padding: 4rem 1.5rem;
+    padding: 1rem 1.5rem 3rem;
   }
+  .illo {
+    display: block;
+    width: min(92vw, 560px);
+    height: min(62vh, 520px);
+    cursor: grab;
+  }
+  .illo:active { cursor: grabbing; }
   .hero h1 {
-    font-family: "Black Han Sans", "Gowun Batang", sans-serif;
+    font-family: "Jua", sans-serif;
     font-weight: 400;
-    font-size: clamp(4.5rem, 17vw, 11rem);
-    line-height: 1;
-    letter-spacing: 0.04em;
-    color: var(--starlight);
-    text-shadow:
-      2px 2px 0 hsl(0 90% 62%),
-      4px 4px 0 hsl(35 95% 58%),
-      6px 6px 0 hsl(55 95% 58%),
-      8px 8px 0 hsl(130 70% 52%),
-      10px 10px 0 hsl(200 85% 58%),
-      12px 12px 0 hsl(265 80% 64%);
-    animation: rainbow 6s linear infinite, float 5s ease-in-out infinite;
-  }
-  @keyframes rainbow { to { filter: hue-rotate(360deg); } }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    font-size: clamp(3.4rem, 12vw, 6.5rem);
+    line-height: 1.05;
+    letter-spacing: 0.03em;
   }
   .hero .role {
-    margin-top: 2.5rem;
-    font-size: clamp(1.15rem, 3vw, 1.5rem);
-    color: var(--gold);
+    margin-top: 0.6rem;
+    font-family: "Jua", sans-serif;
+    font-size: clamp(1.2rem, 3.4vw, 1.6rem);
   }
-  .hero .posts {
-    margin-top: 0.75rem;
-    color: var(--muted);
-    max-width: 34em;
-  }
-  .scroll-hint {
-    margin-top: 4rem;
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
-
-  /* ---------- 본문 섹션 ---------- */
-  section.block {
-    max-width: 46rem;
-    margin: 0 auto;
-    padding: 5rem 1.5rem;
-    border-top: 1px solid var(--line);
-  }
+  .hero .posts { margin-top: 0.6rem; color: var(--muted); max-width: 34em; }
+  .hero .hint { margin-top: 2rem; font-size: 0.92rem; color: var(--muted); }
+  section.block { max-width: 46rem; margin: 0 auto; padding: 4.5rem 1.5rem; }
+  section.block + section.block { border-top: 2px dotted var(--line); }
   section.block h2 {
-    font-family: "Black Han Sans", sans-serif;
+    font-family: "Jua", sans-serif;
     font-weight: 400;
-    font-size: clamp(1.9rem, 5vw, 2.6rem);
-    letter-spacing: 0.02em;
-    color: var(--starlight);
-    margin-bottom: 1.75rem;
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    margin-bottom: 1.5rem;
   }
   section.block p + p { margin-top: 1.1rem; }
-  .lead { font-size: 1.2rem; color: var(--starlight); }
-
-  .fields {
-    list-style: none;
-    display: flex; flex-wrap: wrap;
-    gap: 0.6rem 0.7rem;
-  }
+  .lead { font-size: 1.22rem; }
+  .fields { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem 0.7rem; }
   .fields li {
-    border: 1px solid var(--line);
+    background: var(--cloud);
     border-radius: 999px;
-    padding: 0.35rem 1rem;
+    padding: 0.4rem 1.05rem;
     font-size: 0.98rem;
-    background: rgba(12, 16, 48, 0.6);
+    box-shadow: 0 3px 0 var(--line);
   }
-
-  .orgs { display: grid; gap: 2.25rem; }
-  .orgs h3 {
-    font-size: 1.1rem;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
+  .orgs { display: grid; gap: 2.2rem; }
+  .orgs h3 { font-family: "Jua", sans-serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 0.4rem; }
   .orgs p { color: var(--muted); font-size: 0.98rem; line-height: 2; }
-
   .projects { list-style: none; }
-  .projects li {
-    padding: 1rem 0;
-    border-bottom: 1px dashed var(--line);
-    font-size: 1.1rem;
+  .projects li { padding: 0.9rem 0 0.9rem 1.6rem; position: relative; font-size: 1.1rem; }
+  .projects li::before {
+    content: ""; position: absolute; left: 0; top: 1.45rem;
+    width: 0.7rem; height: 0.7rem; border-radius: 50%;
+    background: var(--sun); box-shadow: 0 0 0 3px var(--ink);
   }
-  .projects li:last-child { border-bottom: 0; }
   .projects span { display: block; color: var(--muted); font-size: 0.95rem; }
-
-  .contact { text-align: center; padding-bottom: 7rem; }
+  .contact { text-align: center; padding-bottom: 6rem; }
   .contact .mail {
-    display: inline-block;
-    margin-top: 0.5rem;
-    font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+    display: inline-block; margin-top: 1rem;
+    font-family: "Jua", sans-serif;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
     text-decoration: none;
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 0.2rem;
+    background: var(--sun);
+    padding: 0.55rem 1.4rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 0 var(--ink);
+    transition: transform .15s, box-shadow .15s;
   }
-  footer {
-    position: relative; z-index: 1;
-    text-align: center;
-    padding: 2rem 1rem 3rem;
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
-
+  .contact .mail:hover { transform: translateY(2px); box-shadow: 0 2px 0 var(--ink); }
+  footer { text-align: center; padding: 2rem 1rem 3rem; color: var(--muted); font-size: 0.85rem; }
   @media (prefers-reduced-motion: reduce) {
-    .hero h1 { animation: none; }
     html { scroll-behavior: auto; }
+    .contact .mail { transition: none; }
   }
 </style>
 </head>
 <body>
-<canvas id="sky" aria-hidden="true"></canvas>
-
 <main>
   <header class="hero">
+    <canvas class="illo" aria-label="구름 사이에서 춤추는 웃는 AI 로봇 일러스트" role="img"></canvas>
     <h1>성찬용</h1>
     <p class="role">생성형 AI 활용 강사</p>
     <p class="posts">주식회사 SKY AI 부사장 · 천안시 AI 책임교수 · 천안시 AI 정책특보 · 충남 AI 정책 자문위원</p>
-    <a class="scroll-hint" href="#about">아래로 내려 더 보기</a>
+    <p class="hint">로봇을 끌어서 돌려 보세요</p>
   </header>
 
   <section class="block" id="about">
@@ -223,60 +173,120 @@
 
 <footer>© 2026 성찬용 · 천안</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/zdog@1.1.3/dist/zdog.dist.min.js"></script>
 <script>
-  (function () {
-    const canvas = document.getElementById('sky');
-    const ctx = canvas.getContext('2d');
-    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let stars = [], w, h, dpr;
+(function () {
+  if (typeof Zdog === 'undefined') return;
+  const TAU = Zdog.TAU;
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const SCENE = 64;
 
-    function resize() {
-      dpr = window.devicePixelRatio || 1;
-      w = window.innerWidth; h = window.innerHeight;
-      canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.round((w * h) / 4500);
-      stars = Array.from({ length: count }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 1.4 + 0.3,
-        phase: Math.random() * Math.PI * 2,
-        speed: Math.random() * 0.025 + 0.008,
-        drift: Math.random() * 0.06 + 0.01,
-        warm: Math.random() < 0.25
-      }));
-      if (still) draw(0);
-    }
+  const illo = new Zdog.Illustration({
+    element: '.illo',
+    resize: true,
+    dragRotate: true,
+    onResize(width, height) {
+      this.zoom = Math.min(width, height) / SCENE;
+    },
+  });
 
-    function draw(t) {
-      ctx.clearRect(0, 0, w, h);
-      for (const s of stars) {
-        const a = still ? 0.75 : 0.35 + 0.65 * Math.abs(Math.sin(s.phase + t * s.speed));
-        ctx.fillStyle = s.warm ? `rgba(244,233,166,${a})` : `rgba(255,248,231,${a})`;
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fill();
-        if (s.r > 1.4 && a > 0.85) {
-          ctx.strokeStyle = `rgba(255,248,231,${(a - 0.85) * 3})`;
-          ctx.lineWidth = 0.6;
-          ctx.beginPath();
-          ctx.moveTo(s.x - s.r * 4, s.y); ctx.lineTo(s.x + s.r * 4, s.y);
-          ctx.moveTo(s.x, s.y - s.r * 4); ctx.lineTo(s.x, s.y + s.r * 4);
-          ctx.stroke();
-        }
-        if (!still) {
-          s.x -= s.drift;
-          if (s.x < -2) s.x = w + 2;
-        }
-      }
-    }
+  const YELLOW = '#ffc93c', YELLOW_DARK = '#eaa922', NAVY = '#24305e',
+        CYAN = '#5ee6ff', PINK = '#ff8fb1', RED = '#ff5d73', WHITE = '#ffffff';
 
-    let frame = 0;
-    function loop() { draw(frame++); requestAnimationFrame(loop); }
-    window.addEventListener('resize', resize);
-    resize();
-    if (!still) loop();
-  })();
+  const robot = new Zdog.Group({ addTo: illo });
+
+  new Zdog.Box({
+    addTo: robot,
+    width: 16, height: 13, depth: 10,
+    stroke: 4,
+    color: YELLOW,
+    leftFace: YELLOW_DARK, rightFace: YELLOW_DARK,
+    topFace: YELLOW, bottomFace: YELLOW_DARK, rearFace: YELLOW_DARK,
+  });
+
+  new Zdog.Rect({
+    addTo: robot,
+    width: 11, height: 7,
+    stroke: 2, fill: true,
+    color: NAVY,
+    translate: { z: 7.1 },
+  });
+
+  const eyes = [-2.7, 2.7].map(x => new Zdog.Shape({
+    addTo: robot, stroke: 2.4, color: CYAN,
+    translate: { x, y: -1.1, z: 8.2 },
+  }));
+
+  new Zdog.Shape({
+    addTo: robot,
+    path: [
+      { x: -2.4, y: 1.3 },
+      { bezier: [ { x: -1.4, y: 3.2 }, { x: 1.4, y: 3.2 }, { x: 2.4, y: 1.3 } ] },
+    ],
+    closed: false, stroke: 0.9, color: CYAN,
+    translate: { z: 8.2 },
+  });
+
+  [-6.4, 6.4].forEach(x => new Zdog.Shape({
+    addTo: robot, stroke: 1.8, color: PINK,
+    translate: { x, y: 5.4, z: 7.3 },
+  }));
+
+  [-1, 1].forEach(side => new Zdog.Cylinder({
+    addTo: robot,
+    diameter: 5, length: 2,
+    stroke: false,
+    color: NAVY, backface: NAVY,
+    rotate: { y: TAU / 4 },
+    translate: { x: side * 11 },
+  }));
+
+  new Zdog.Shape({
+    addTo: robot,
+    path: [ { y: -8.6 }, { y: -13 } ],
+    stroke: 1, color: NAVY,
+  });
+  const bulb = new Zdog.Shape({
+    addTo: robot, stroke: 3.2, color: RED,
+    translate: { y: -14 },
+  });
+
+  function makeCloud(sizes, z) {
+    const group = new Zdog.Group({ addTo: illo, translate: { z } });
+    const offsets = [ [0, 0], [0.8, -0.4], [0.8, 0.4], [1.6, 0.3], [1.8, -0.4], [2.4, 0] ];
+    const parts = offsets.map(([ox, oy], i) => new Zdog.Shape({
+      addTo: group, stroke: sizes[i], color: WHITE,
+      translate: { x: ox * 4, y: oy * 4 },
+    }));
+    return { group, parts, base: parts.map(p => p.translate.y) };
+  }
+  const back = makeCloud([12, 12, 12, 12, 12, 8], -14);
+  const front = makeCloud([14, 14, 14, 10, 12, 8], 14);
+
+  const start = Date.now();
+  function frame() {
+    const t = still ? 0 : Date.now() - start;
+    robot.rotate.y = Math.sin(t / 400) / 2.3;
+    robot.rotate.z = Math.sin(t / 400) / 8.1;
+    robot.translate.y = Math.sin(t / 100) / 1.5;
+    bulb.translate.x = Math.sin(t / 160) * 0.8;
+    const blink = !still && (t % 3200) < 140;
+    eyes.forEach(e => { e.scale.y = blink ? 0.2 : 1; });
+
+    back.group.translate.x = Math.sin(t / 2000) * 2 - 22;
+    back.group.translate.y = -13;
+    front.group.translate.x = Math.sin(t / 3000) * 5 + 6;
+    front.group.translate.y = 15;
+    [back, front].forEach(c => c.parts.forEach((p, i) => {
+      p.translate.y = c.base[i] + Math.sin(t / (400 + i * 120) + i) * 0.5;
+    }));
+
+    illo.updateRenderGraph();
+    if (!still) requestAnimationFrame(frame);
+  }
+  frame();
+  if (still) illo.element.addEventListener('pointermove', () => illo.updateRenderGraph());
+})();
 </script>
 </body>
 </html>
